@@ -8,22 +8,29 @@
             'background-color' : '#FFF'
         }, options);
     
+
         return this.each(function() {
+
+            var target = $(this);
  
             var len = string.length;
             var output = '';
 
-            for(var i=0; i < len; i++){
-                var letter = string[i];
-                output += letter;
-                
-                //alert(output);
-                
-                $(this).delay(2000).queue(function(){ 
-                    $(this).html(output).dequeue(); 
-                });
-                
+            var i = 0; 
+
+            function myLoop () {   
+                setTimeout(function () {
+                    var letter = string[i];
+                    output += letter;
+                    target.html(output);
+                    i++;                   
+                    if (i < len) {         
+                        myLoop();            
+                    }                      
+                }, 300)
             }
+
+            myLoop();                     
             
         });
 
