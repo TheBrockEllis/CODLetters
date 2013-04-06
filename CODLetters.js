@@ -1,13 +1,13 @@
 (function( $ ){
 
-    $.fn.CODLetters = function(string, options) {  
+    $.fn.CODLetters = function(input, options) {  
 
         // Create some defaults, extending them with any options that were provided
         var settings = $.extend( {
             'color'     : '#000',
             'size'      : '36px',
             'family'    : 'Arial',
-            'delay'     : '100'
+            'delay'     : '200'
         }, options);
     
 
@@ -18,20 +18,32 @@
                   .css("font-size", settings.size)
                   .css("font-family", settings.family);
  
-            var len = string.length;
-            var output = '';
+            var len = input.length;
+            var partial = '', 
+                output = '';
 
             var i = 0; 
 
             function myLoop () {   
                 setTimeout(function () {
-                    var letter = string[i];
-                    output += letter;
+                    var letter = input[i]; //works fine 
+                    partial = partial + letter; //works fine 
+                   
+                    var d = 0;
+                    var random = '';
+                    var diff = len - partial.length;
+                    while(d < diff){
+                        random += String.fromCharCode(65 + Math.floor(Math.random()*53) );
+                        d++;
+                    }
 
-                    var difference = len - output.length;
-                    console.log(difference);
-
+                    var output = partial + random;
+                
                     target.html(output);
+                    
+                    var random = '';
+                    var output = '';
+                    
                     i++;                   
                     if (i < len) {         
                         myLoop();            
