@@ -1,5 +1,7 @@
 CODLetters.js is a small jQuery library for creating a Call of Duty like animation for a string of words.
-==========
+
+Usage
+=====
 
 Simply include the jQuery library and CODLetters.js in your file, like so:
 
