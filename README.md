@@ -19,6 +19,7 @@ The library has parameters that can be customized:
 ```jquery
 $('#your-selected-div').CODLetters("Capture the objective!", {
     "size" : "34px", //size in pixels of the animated text
+    "family" : "Arial", //font family to use 
     "delay" : "500", //delay in miliseconds between animations
     "color" : "#B0B0B0" //color of text      
 });
