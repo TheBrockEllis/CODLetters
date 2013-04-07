@@ -9,14 +9,15 @@
     </head>
     <body>
 
-        <div style='width: 75%; margin: auto;text-align: center; background-image: url("http://cdn.pocket-lint.com/images/JkjF/best-cod-black-ops-deals-0.jpg?20121113-145723");'>
-
-        <div>
-            Text Goes Here: <input type="text" id="input" placeholder="Text" />
-            <input type="button" id="go" value="GO!" />
-        </div>
+        <div style='width: 75%; margin: auto; margin-top: 50px;'>
+            <div style='margin-left: 20%;'>
+                <h1>CODLetters.js <span id='small'>A small jQuery library for animating a string.</span></h1>
+                <input type="text" id="input" placeholder="Enter Some Text Here" />
+                <br />
+                <input type="button" id="go" value="GO!" style='margin-top: 10px;' />
+            </div>
         
-        <span id="CODLetters"></span>
+            <div style='margin-left: 20%; margin-top: 10px;' id="CODLetters"></div>
 
         </div>
 
@@ -26,7 +27,11 @@
             $('document').ready(function(){
                 $('#go').on('click', function(){
                     var text = $('#input').val();
-                    $('#CODLetters').CODLetters(text);  
+                    $('#CODLetters').CODLetters(text, { 
+                        'color' : '#FFF',
+                        'size' : '48px',
+                        'delay' : '100'     
+                    } );  
                 });
             });
 
