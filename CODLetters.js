@@ -22,8 +22,6 @@
             var partial = '', 
                 output = '';
 
-            var i = 0; 
-
             function myLoop () {   
                 setTimeout(function () {
                     var letter = input[i]; //works fine 
@@ -43,9 +41,8 @@
                     
                     var random = '';
                     var output = '';
-                    
-                    i++;                   
-                    if (i < len) {         
+                                       
+                    if (diff > 0) {         
                         myLoop();            
                     }                      
                 }, settings.delay)
